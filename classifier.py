@@ -3,8 +3,8 @@ from sklearn.naive_bayes import MultinomialNB
 from sklearn.metrics import accuracy_score
 from clean_dataset import clean_dataset
 
+# Classificador Naive-Bayes
 def naive_bayes(X_train, X_test, y_train, y_test):
-    # Classificador Naive-Bayes
     vectorizer = CountVectorizer()
     counts_Xtrain = vectorizer.fit_transform(X_train)
 

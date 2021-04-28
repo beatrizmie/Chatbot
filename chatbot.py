@@ -17,6 +17,13 @@ def newSentence(vectorizer, model):
         print("Desculpe, não entendi")
     else:
         resposta = input("Você deseja: {0}? [s/n] ".format(prediction[0]))
+        if resposta == "s":
+            if prediction[0] == "Consultar saldo da conta":
+                print("Você possui R$ 13.570,00 na conta.")
+            elif prediction[0] == "Obter informações relativas ao clima":
+                print("A temperatura neste momento é de 23°, com uma pequena chance de chuva.")
+            else:
+                print("Status da luz: ligada. \nStatus do ar condicionado: desligado.")
 
     prediction_list = [prediction[0]]
 
@@ -29,6 +36,13 @@ def newSentence(vectorizer, model):
                 else:
                     resposta = input("Então você deseja: {0}? [s/n] ".format(i))
                     prediction_list.append(i)
+                    if resposta == "s":
+                        if i == "Consultar saldo da conta":
+                            print("Você possui R$ 13.570,00 na conta.")
+                        elif i == "Obter informações relativas ao clima":
+                            print("A temperatura neste momento é de 23°, com uma pequena chance de chuva.")
+                        else:
+                            print("Status da luz: ligada. \nStatus do ar condicionado: desligado.")
                 break
         if len(prediction_list) == len(model.classes_):
             print("Desculpe, não consigo te ajudar. :(")
